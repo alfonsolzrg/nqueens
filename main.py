@@ -13,6 +13,8 @@ def get_db_session():
     CONFIG['DB_HOST'],
     CONFIG['DB_NAME']
   )
+  # Database creation happens during postgres docker image start,
+  # see https://hub.docker.com/_/postgres/
   # Initialize tables
   Base.metadata.create_all(engine)
   Session = sessionmaker(bind=engine)
