@@ -1,6 +1,6 @@
 import copy
 
-class NQueensBoard():
+class NQueensSolver():
   """N - Queen problem solver"""
 
   def __init__(self, board_size):
@@ -25,7 +25,6 @@ class NQueensBoard():
   def place_queens(self, col):
     # Base case: we placed a queen at the last col, so we found a solution.
     if col == self.board_size:
-      print("Found a solution! -> \n{}".format(self))
       self.solutions.append(copy.deepcopy(self._board))
       return True
 
